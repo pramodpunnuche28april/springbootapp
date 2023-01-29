@@ -18,6 +18,7 @@ stage("Git Clone"){
 
     withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'PASSWORD')]) {
         sh 'docker login -u pramodpunnuche28april -p $PASSWORD'
+            
     }
     stage("Push Image to Docker Hub"){
         sh 'docker push  pramodpunnuche28april/my-hub:springboot-docker-demo'
